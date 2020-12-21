@@ -1,0 +1,56 @@
+//Importar los archivos de la carpeta componentes //
+
+@import "componentes/mixins";
+@import "componentes/variables";
+@import "componentes/for";
+
+// Selector universal//
+* *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0.5px;
+
+    /* Amb això ens asegurem que funciona per tots els navegadors */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+// Incluyendo apartados del css //
+
+.body {
+    @include body;
+}
+
+.container {
+    @include container;
+}
+
+.stripes_tittle{
+    @include stripes_tittle
+}
+
+// Stripes pseudoclass child: color de fondo y posición de opacidad //
+.stripes_content:nth-child(1) {
+    left: 0;
+    @include stripes_content($color1);
+}
+
+.stripes_content:nth-child(2) {
+    left: 20vw;
+    @include stripes_content($color2);
+}
+
+.stripes_content:nth-child(3) {
+    left: 40vw;
+    @include stripes_content($color3);
+}
+
+.stripes_content:nth-child(4) {
+    left: 60vw;
+    @include stripes_content($color4);
+}
+
+.stripes_content:nth-child(5) {
+    left: 80vw;
+    @include stripes_content($color5);
+}
